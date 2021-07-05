@@ -1,0 +1,77 @@
+<h3 class="offset-md-1">Students</h3>
+<div class="row offset-md-1">
+    <div class="col-md-6">
+        <div class="form-group row">
+            <div class="col-sm-2">
+             <label for="id" class="col-sm-1">Id</label>
+            </div>
+            <div class="col-sm-6">
+              <input type="number" class="form-control"  [(ngModel)] = "model.studentId" #name="ngModel" name="studentId" >
+            </div>
+        </div>
+        <br>
+        <div class="form-group row">
+               <div class="col-sm-2">
+                <label for="name" class="col-sm-1">Name</label>
+               </div>
+               <div class="col-sm-6">
+                 <input type="text" class="form-control"  [(ngModel)] = "model.name" #name="ngModel" name="name" >
+               </div>
+        </div>
+        <br>
+        <div class="form-group row">      
+            <div class="col-sm-2">
+                <label for="studentRoll" class="col-sm-1">Roll</label>
+               </div>
+               <div class="col-sm-6">
+                <input type="text" class="form-control" [(ngModel)] = "model.studentRoll" #name="ngModel" name="studentRoll" >
+             </div>
+        </div>
+        <br>
+        <div class="form-group row">    
+            <div class="col-sm-2">
+                <label for="studentClass" class="col-sm-1">Class</label>
+               </div>
+               <div class="col-sm-6">
+                <input type="text" class="form-control" [(ngModel)] = "model.studentClass" #name="ngModel" name="studentClass" >
+             </div>
+        </div>
+        <br>
+        <div class="form-group row">
+            <div class="col-sm-2">             
+            </div>
+            <div class="col-sm-6">
+                <button class="w-100 btn btn-lg btn-primary" type="button" (click)="OnAddStudent()">Submit</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-5">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Roll</th>
+                <th scope="col">Class</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let x of allStudents">
+                    <td>{{x.studentId}}</td>
+                    <td>{{x.name}}</td>
+                    <td>{{x.studentRoll}}</td>
+                    <td>{{x.studentClass}}</td>
+                    <td>
+                        <a href="javascript:void(0)" (click)="getStudents(x)" type="button">click</a>
+                        <a href="javascript:void(0)" (click)="deleteStudent(x)" type="button">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
